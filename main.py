@@ -197,9 +197,10 @@ async def process_currency(message: Message, state: FSMContext):
             await state.clear()
             return
 
+
 class ViewOperations(StatesGroup):
     waiting_for_category = State()
-
+    
 # Доработка команды /operations
 @router.message(ViewOperations.waiting_for_category)
 async def process_category(message: Message, state: FSMContext):
