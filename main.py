@@ -184,7 +184,7 @@ async def process_currency(message: Message, state: FSMContext):
             output += f"Дата: {operation[1]}, Тип: {operation[4]}, Сумма: {operation[2]} RUB\n"
     else:
         try:
-            response = requests.get(f"http://127.0.0.1:5001/rate?currency={currency}")
+            response = requests.get(f"http://195.58.54.159:8000/rate?currency={currency}")
             response.raise_for_status()  # Проверяем на HTTP ошибки
 
             rate = response.json()["rate"]
